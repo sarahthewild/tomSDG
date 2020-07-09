@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Phantom by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		
+
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+		$(function() {
+		  $("#toggle2").click(function() {
+		    if ($(this).is(":checked")) {
+		      $("#aggregatedF").show();
+		      $("#disaggregatedF").hide();
+		    } else {
+		      $("#aggregatedF").hide();
+		      $("#disaggregatedF").show();
+			    }
+			  });
+			});
+		</script>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/LOGO INSEADSDG.svg" alt="" /></span><span class="title">Technology &amp Operations Management </span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="research.html">Research</a></li>
+							<li><a href="teaching.html">Teaching</a></li>
+							<li><a href="methodology.html">Methodology</a></li>
+						</ul>
+					</nav>
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1> Methodology</h1>
+								
+									<p>This page discusses the methodology used to obtain the data and its related visualizations.</p>
+
+								<h2> Data gathering</h2>
+									<p>In June 2020, the TOM department decided to gather data regarding their SDG presence. More specifically, they gathered data its faculty's interest, contribution and content with regards to research and teaching.<br>
+									The goal was to identify up to 3-4 main SDGs per faculty that were best fit to their research. They, however, were free to highlight more. Per main SDG a faculty selects, he or she was asked to fill out a form with:</p>
+							
+										<ul>
+										 	<li><b>Interest</b>: on a scale of 1-lowest to 5-highest the faculty's interest in research and teaching regarding this main SDG</li>
+										 	<li><b>Contribution</b>: on a scale of 1-lowest to 5-highest the faculty's contribution in research and teaching regarding this main SDG</li>
+										  	<li><b>Content</b>: the produced content for this main SDG in the following categories:
+										  		<ul style="margin-left:2em; margin-bottom: 0;">
+											      <li><b>Research</b>: faculty indicated the number of published articles, working papers, and work-in-progress according to following categorization: 0, 1, [2,5), [5,10) or >10</li>
+											      <li><b>Teaching</b>: faculty indicated the number of courses, sessions, case studies according to following categorization: 0, 1, [2,5), [5,10) or >10</li>
+											    </ul>
+											 <li><b>Interconnected SDGs:</b> the SDG goals to which they feel that their contribution to the main SDG goal relates</li>
+										  	</li>
+										</ul>
+
+									<p> 
+									<p><b><i>Note</i></b>: for the future it might be useful to create, for example, a google forms for the data gathering. This will limit the time needed in data cleaning and would allow to skip a big part of the current processing steps.</p>
+								<h2> Data processing </h2>
+								<p>The data processing happened in excel with the use of VBA. For <b>interest</b> and <b>contribution</b> the data processing is straightforward as they are rated on a scale of 1 to 5. The other data items, content and interconnnected SDGs, require more care.</p>
+								<p><b>Content</b>:  the scores for the different elements, i.e. for research, published articles, working papers, and work-in-progress and for teaching, courses, sessions, case studies, were aggregated in a score between 0 - the lowest and 5 - the highest. For this following weights were used:  
+								<table>
+								   <tr>
+								      <th>Research</th>
+								      <td>Published</td>
+								      <td>0.6</td>
+								   </tr>
+								   <tr>
+								      <td></td>
+								      <td>Working Papers</td>
+								      <td>0.2</td>
+								   </tr>
+								   <tr>
+								      <td></td>
+								      <td>Work-in-Progress</td>
+								      <td>0.2</td>
+								   </tr>
+								   <tr>
+								      <th>Teaching</th>
+								      <td>Courses</td>
+								      <td>0.6</td>
+								   </tr>
+								   <tr>
+								      <td></td>
+								      <td>Sessions</td>
+								      <td>0.2</td>
+								   </tr>
+								   <tr>
+								      <td></td>
+								      <td>Case studies</td>
+								      <td>0.2</td>
+								   </tr>
+								</table>  
+								</p>
+								<p><b>Interconnected SDGs</b>:  to process the interaction data, an interaction weight of <b>0.5</b> was used. The interaction weight determines to what extent mentioned linked SDGs are taken into account. E.g. when a faculty mentions that he or she works on SDG 4, yet the research is also linked to SDG 8, the interest scores of SDG 4 will be duplicated to SDG 8 factored with the interaction weight, this means that when the Research interest score for SDG 4 was 4, the research interest score for SDG 8 will be 4 * interaction weight. The maximum total score per SDG is 5. In case the interconnected SDG for this faculty also appears as one of their main SDGs, the 'main' scores attributed to this SDG will be considered, meaning that the interaction weight becomes 0. </p>
+
+
+
+								<h2> Data visualization </h2>
+									<p> Starting from the processed data, a data visualization process was started. On the one hand, we wanted to obtain an overview of the Faculty's strengths and interest in terms of the SDGs. On the other hand, we wanted to have a tool to connect different faculty working on similar topics. To meet the first need, flower graph dashboards were created. The latter was enabled through different interactive network diagrams. For each section, an overview graph was created followed by a research and teaching deepdive.</p>
+
+									<p><b>Flower graphs</b> - TOM's SDG presence: The interactive flower graphs allow to observe which SDGs are of major and minor interest to the TOM department and to its faculty. It allows to highlight different SDGs, as such you can see who is an 'expert' or who is interested in becoming one. These graphs were generated in a tool called <b>Tableau</b>.</p>
+
+									<p><b>Network diagrams</b> - TOM's SDG network: The interactive network diagrams allow to observe which faculty relate to which SDGs and how the different SDGs, and faculty, are interconnected. Such a tool can be useful to cluster faculty in SDG deepdive groups and to streamline different projects. These graphs were generated in a tool called <b>Kumu</b>, the overview graph was created with a javascript plugin called <b>amCharts</b>.</p>
+								
+								
+							</header>
+
+
+							
+
+								
+
+								
+							</div>
+						</div>
+
+				
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="subscriberform.php">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-desktop"><span class="label">Phone</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

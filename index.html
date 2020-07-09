@@ -1,3 +1,4 @@
+	
 	<!DOCTYPE HTML>
 <!--
 	Phantom by HTML5 UP
@@ -16,6 +17,20 @@
 		<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 		<script src="https://www.amcharts.com/lib/4/themes/moonrisekingdom.js"></script>
 		<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script>
+		$(function() {
+		  $("#toggle").click(function() {
+		    if ($(this).is(":checked")) {
+		      $("#chartdiv").show();
+		      $("#chartdiv2").hide();
+		    } else {
+		      $("#chartdiv").hide();
+		      $("#chartdiv2").show();
+    }
+  });
+});
+		</script>
 		
 
 	</head>
@@ -47,10 +62,9 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">General</a></li>
 							<li><a href="research.html">Research</a></li>
-							<li><a href="generic.html">Teaching</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="teaching.html">Teaching</a></li>
+							<li><a href="methodology.html">Methodology</a></li>
 						</ul>
 					</nav>
 
@@ -60,14 +74,28 @@
 							<header>
 								<h1>This is an overview of the <a href="https://sustainabledevelopment.un.org/"> SDG</a> presence of INSEAD's<br />
 								 <a href="https://www.insead.edu/faculty-research/academic-areas/technology-operations-management">Technology and Operations Management department</a>.</h1>
-								<p>This dashboard is the result of the SDG exercise conducted by INSEAD's Technology and Operations Management department in June 2020. It discusses the SDG presence in TOM's research and teaching. Its presence is the sum of the faculty's interest and contribution for each SDG.</p>
+								<p><i>This dashboard is the result of the SDG exercise conducted by INSEAD's Technology and Operations Management department in June 2020.</i></p>
+								
 							</header>
 
-							<div class='tableauPlaceholder' id='viz1593784979895' style='position: relative'>
-								<header> <h2> Flower graph </h2>
+							
 
-								<noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;TO&#47;TOMSDGv1&#47;Overview&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='TOMSDGv1&#47;Overview' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;TO&#47;TOMSDGv1&#47;Overview&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1593784979895');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+							<div class="tableauPlaceholder" id="viz1594202845750" style="width: 100%;/* height: 882px; */position: relative;overflow: hidden;display: block;">
+								<header> <h2> TOM's SDG presence </h2>
+									<p> The below graph displays the SDG presence of the TOM faculty in terms of research and teaching. The 'presence' is portrayed as the sum of the faculties' interest and contribution for each SDG. You can highlight an SDG by clicking on a flower's leaf or on the SDG symbol above.</p>
 
+								<noscript>
+									<a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Af&#47;AfterRetreatTOMSDG&#47;Overview&#47;1_rss.png' style='border: none' /></a>
+								</noscript>
+								<script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+							</header><iframe frameborder="0" marginheight="0" marginwidth="0" title="Data Visualization" allowtransparency="true" allowfullscreen="true" class="tableauViz" style="width: 100%; height: 882px; margin: 0px; padding: 0px; border: none; display: block;" src="https://public.tableau.com/views/AfterRetreatTOMSDG/Overview?:embed=y&amp;:showVizHome=no&amp;:host_url=https%3A%2F%2Fpublic.tableau.com%2F&amp;:embed_code_version=3&amp;:tabs=no&amp;:toolbar=yes&amp;:animate_transition=yes&amp;:display_static_image=no&amp;:display_spinner=no&amp;:display_overlay=yes&amp;:display_count=yes&amp;:language=en&amp;:loadOrderID=0"></iframe></div>
+
+
+							
+
+
+
+							
 								<!--
 
 							<div class="network" style='position:relative'>
@@ -76,202 +104,117 @@
 								<iframe src="https://embed.kumu.io/ecca38c1ec8df64ac5a4ebaa310f3549" width="1024" height="795" frameborder="0" position='center'></iframe>
 							</div> -->
 
-							<!-- Styles -->
-							<style>
-							#chartdiv {
-							  width: 100%;
-							  height: 900px;
-							  
-
-							}
-							</style>
-
-							<!-- Resources -->
-							
-
-							<!-- Chart code -->
-							<script>
-							am4core.ready(function() {
-
-							// Themes begin
-							am4core.useTheme(am4themes_animated);
-							// Themes end
-
-							var chart = am4core.create("chartdiv", am4charts.ChordDiagram);
-							chart.hiddenState.properties.opacity = 0;
+							<div id = "chartselection" >
+								<header> 
+									<br>
+									<h2> TOM's SDG network </h2>
+									<p> The below graph displays the research connections of the TOM faculty. You can hide or display the interconnections between the different SDGs, i.e. the secondary links, by clicking on the toggle below. <br> To <b>highlight</b> the links of respective faculty or SDGs, simply click on the node. To undo the highlight, double click on the node.</p>
 
 
-							
-							chart.dataSource.url = "dataNetwork.csv";
-							chart.dataSource.parser = new am4core.CSVParser();
-							chart.dataSource.parser.options.useColumnNames = true;
-
-							
+								</header>
 
 
+								<!-- Styles -->
+								<style>
+								#chartdiv, #chartdiv2, #chartdiv3  {
+								  width: 100%;
+								  height: 75vh;
+								  position: relative;
+								  
+								}
 
-							chart.dataFields.fromName = "from";
-							chart.dataFields.toName = "to";
-							chart.dataFields.value = "value";
+								#chartdiv2 {
+									display: none;
+								}
+								
+								
+								</style>
 
-							// make nodes draggable
-							var nodeTemplate = chart.nodes.template;
-							nodeTemplate.readerTitle = "Click to show/hide or drag to rearrange";
-							nodeTemplate.showSystemTooltip = true;
-							nodeTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer
-							var label = nodeTemplate.label;
-							label.relativeRotation = 90;
-							chart.nodePadding = 0.5;
-							chart.minNodeSize = 0.01;
-							chart.startAngle = 80;
-							chart.endAngle = chart.startAngle + 360;
-							chart.sortBy = "value";
-							chart.fontSize = 10;
-
-							}); // end am4core.ready()
-							</script>
-
-							<!-- HTML -->
-							<div id="chartdiv"></div>
+								<!-- Rectangular switch -->
+								<div>
+									
 
 
-							
+									<span class = "label">Include secondary links</span>
+									<!-- Rounded switch -->
+									<label class="switch">
+									  <input type="checkbox" id="toggle" checked="true">
+									  <span class="slider round"></span>
+									</label>
+								</div>
 
+								
+
+								
+								<div id="chartdiv">
+									<header> <h2> All links </h2>
+									<script src="scriptNetworkv2.js"></script>
+									
+							    </div>
+						    	<div id="chartdiv2">
+							    	<header> <h2> Direct links </h2>
+									<script src="scriptNetwork_level1.js"></script>
+								</div>
+
+								<div>
+									<p><b style="color:#00684B";>Direct links</b> <br>
+									<b style="color:#009F6E";>Indirect links</b></p>
+										
+
+								</div>
+								
+							</div>
+
+							<div style="margin-top: 3em;">
+
+							<header>
+								
+								<h1><center>Deepdives</center></u></h1>
+							</header>
 
 							<section class="tiles">
 								<article class="style1">
 									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>General</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
+										<img src="images/pic01 copy.jpg" alt="">
 									</span>
 									<a href="research.html">
 										<h2>Research</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Teaching</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Tempus</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Aliquam</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Veroeros</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>Provides a deepdive on TOM's research SDG presence.</p>
 										</div>
 									</a>
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="images/pic07.jpg" alt="" />
+										<img src="images/pic02.jpg" alt="">
 									</span>
-									<a href="generic.html">
-										<h2>Ipsum</h2>
+									<a href="teaching.html">
+										<h2>Teaching</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>Provides a deepdive on TOM's teaching SDG presence.</p>
 										</div>
 									</a>
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="images/pic08.jpg" alt="" />
+										<img src="images/pic03.jpg" alt="">
 									</span>
-									<a href="generic.html">
-										<h2>Dolor</h2>
+									<a href="methodology.html">
+										<h2>Methodology</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>Provides a deepdive on the methodology used.</p>
 										</div>
 									</a>
 								</article>
-								<article class="style1">
-									<span class="image">
-										<img src="images/pic09.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Nullam</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Ultricies</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="images/pic11.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Dictum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="images/pic12.jpg" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Pretium</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
+
+								
 							</section>
+						</div>
+
+							
+
+
+							
 						</div>
 					</div>
 
@@ -280,7 +223,7 @@
 						<div class="inner">
 							<section>
 								<h2>Get in touch</h2>
-								<form method="post" action="#">
+								<form method="post" action="subscriberform.php">
 									<div class="fields">
 										<div class="field half">
 											<input type="text" name="name" id="name" placeholder="Name" />
@@ -300,14 +243,8 @@
 							<section>
 								<h2>Follow</h2>
 								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-desktop"><span class="label">Phone</span></a></li>
 								</ul>
 							</section>
 							<ul class="copyright">
@@ -324,6 +261,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
 
 	</body>
 </html>

@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+ @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
 
 /*
@@ -2208,6 +2208,7 @@ input, select, textarea {
 		min-height: 3.75em;
 	}
 
+
 	input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
@@ -2294,7 +2295,9 @@ input, select, textarea {
 		border: solid 1px #c9c9c9;
 		margin-bottom: 2em;
 		padding: 1.5em;
-	}
+        display: none;
+    	}
+    
 
 		.box > :last-child,
 		.box > :last-child > :last-child,
@@ -2307,6 +2310,7 @@ input, select, textarea {
 			border-radius: 0;
 			padding: 0;
 		}
+
 
 /* Image */
 
@@ -2572,8 +2576,8 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		postiion: relative;
-		margin: -2.5em 0 0 -2.5em;
+		position: relative;
+		margin: -2.5em 0 2 -2.5em;
 	}
 
 		.tiles article {
@@ -2583,7 +2587,7 @@ input, select, textarea {
 			transition: transform 0.5s ease, opacity 0.5s ease;
 			position: relative;
 			width: calc(33.33333% - 2.5em);
-			margin: 2.5em 0 0 2.5em;
+			margin: 0em 1em 0 1em;
 		}
 
 			.tiles article > .image {
@@ -2706,15 +2710,15 @@ input, select, textarea {
 					}
 
 			.tiles article.style1 > .image:before {
-				background-color: #f2849e;
+				background-color: #93D5F6;
 			}
 
 			.tiles article.style2 > .image:before {
-				background-color: #7ecaf6;
+				background-color: #F28B32;
 			}
 
 			.tiles article.style3 > .image:before {
-				background-color: #7bd0c1;
+				background-color: #1F7DBC;
 			}
 
 			.tiles article.style4 > .image:before {
@@ -2752,6 +2756,7 @@ input, select, textarea {
 
 		* + .tiles {
 			margin-top: 2em;
+			margin-bottom: 2em;
 		}
 
 		body.is-preload .tiles article {
@@ -3318,6 +3323,7 @@ input, select, textarea {
 		max-width: 68em;
 		margin: 0 auto;
 		padding: 0 2.5em;
+		overflow: visible;
 	}
 
 		@media screen and (max-width: 736px) {
@@ -3327,3 +3333,68 @@ input, select, textarea {
 			}
 
 		}
+
+/* switch */
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 0px 0px 20px 10px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

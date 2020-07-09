@@ -5,6 +5,7 @@
 */
 
 (function($) {
+	
 
 	var	$window = $(window),
 		$body = $('body');
@@ -181,5 +182,6 @@
 						$menu._hide();
 
 			});
+
 
 })(jQuery);
